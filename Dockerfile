@@ -1,8 +1,10 @@
 FROM CentOS release 6.6
 
 #安装jdk，tomcat
-
-
+RUN wget -p /opt ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
+RUN wget -p /opt ftp://220.194.48.110:21/pub/tomcat7.tar.gz
+RUN tar -zxvf jdk1.7.0_71.tar.gz
+RUN tar -zxvf tomcat7.tar.gz
 
 #设置环境变量
 RUN echo JAVA_HOME=/opt/jdk1.7.0_71
