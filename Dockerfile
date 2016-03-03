@@ -1,4 +1,4 @@
-FROM centos
+FROM centos6.6
 #FROM ubuntu
 #安装wget
 RUN yum install wget
