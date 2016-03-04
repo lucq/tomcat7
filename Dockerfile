@@ -22,7 +22,7 @@ RUN echo CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
 RUN echo PATH=.:$JAVA_HOME/bin:$HOME/bin:$PATH
 
 
-RUN which java
+
 RUN java -version
 #ENV CATALINA_HOME /usr/local/tomcat
 #ENV PATH $CATALINA_HOME/bin:$PATH
