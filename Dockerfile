@@ -16,9 +16,13 @@ RUN tar -zxvf jdk1.7.0_71.tar.gz
 
 
 #设置环境变量
-RUN echo JAVA_HOME=/opt/jdk1.7.0_71
-RUN echo JRE_HOME=$JAVA_HOME/jre
-RUN echo CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+ENV JAVA_HOME /opt/jdk1.7.0_71
+ENV JRE_HOME $JAVA_HOME/jre
+ENV CLASSPATH .:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+ENV PATH .:$JAVA_HOME/bin:$HOME/bin:$PATH
+#RUN echo JAVA_HOME=/opt/jdk1.7.0_71
+#RUN echo JRE_HOME=$JAVA_HOME/jre
+#RUN echo CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
 RUN echo PATH=.:$JAVA_HOME/bin:$HOME/bin:$PATH
 
 
