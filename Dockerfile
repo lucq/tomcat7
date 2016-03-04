@@ -16,6 +16,7 @@ EXPOSE 8089
 
 
 
+
 #设置环境变量
 ENV JAVA_HOME /opt/jdk1.7.0_71
 ENV JRE_HOME $JAVA_HOME/jre
