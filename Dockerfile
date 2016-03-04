@@ -1,11 +1,11 @@
 FROM centos6.6
 #FROM ubuntu
 #安装wget
-#RUN rpm -vhi wget-1.12-1.8.el6.x86_64.rpm
+RUN rpm -vhi wget-1.12-1.8.el6.x86_64.rpm
 #安装jdk，tomcat
-#RUN wget -p /opt ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
-#RUN wget -p /opt ftp://220.194.48.110:21/pub/tomcat7.tar.gz
-RUN curl -fsSL ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
+RUN wget -p /opt ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
+RUN wget -p /opt ftp://220.194.48.110:21/pub/tomcat7.tar.gz
+#RUN curl -fsSL ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
   &&&& mv /usr/share/jdk1.7.0_71.tar.gz /opt
 
 RUN tar -zxvf jdk1.7.0_71.tar.gz
