@@ -7,10 +7,10 @@ RUN cd /opt
 #安装jdk，tomcat
 RUN wget ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
 RUN tar -zxvf jdk1.7.0_71.tar.gz
-#RUN cd /opt
-#RUN wget  ftp://220.194.48.110:21/pub/tomcat7.tar.gz
-#RUN tar -zxvf tomcat7.tar.gz
-#RUN curl -fsSL ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
+RUN cd /opt
+RUN wget  ftp://220.194.48.110:21/pub/tomcat7.tar.gz
+RUN tar -zxvf tomcat7.tar.gz
+RUN curl -fsSL ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
  # &&&& mv /usr/share/jdk1.7.0_71.tar.gz /opt
 
 
@@ -20,14 +20,12 @@ ENV JAVA_HOME /opt/jdk1.7.0_71
 ENV JRE_HOME $JAVA_HOME/jre
 ENV CLASSPATH .:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
 ENV PATH .:$JAVA_HOME/bin:$HOME/bin:$PATH
-#RUN echo JAVA_HOME=/opt/jdk1.7.0_71
-#RUN echo JRE_HOME=$JAVA_HOME/jre
-#RUN echo CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$CLASSPATH
+#校验环境变量设置是否正确
 RUN echo PATH=.:$JAVA_HOME/bin:$HOME/bin:$PATH
 
 
 
-RUN java -version
+
 #ENV CATALINA_HOME /usr/local/tomcat
 #ENV PATH $CATALINA_HOME/bin:$PATH
 #RUN mkdir -p "$CATALINA_HOME"
