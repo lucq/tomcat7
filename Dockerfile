@@ -10,8 +10,9 @@ RUN tar -zxvf jdk1.7.0_71.tar.gz
 RUN cd /opt
 RUN wget  ftp://220.194.48.110:21/pub/tomcat7.tar.gz
 RUN tar -zxvf tomcat7.tar.gz
-RUN curl -fsSL ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
- # &&&& mv /usr/share/jdk1.7.0_71.tar.gz /opt
+
+#设置tomcat端口
+EXPOSE 8089
 
 
 
@@ -24,9 +25,8 @@ ENV PATH .:$JAVA_HOME/bin:$HOME/bin:$PATH
 RUN echo PATH=.:$JAVA_HOME/bin:$HOME/bin:$PATH
 
 
+#启动tomcat服务
+RUN cd /opt/tomcat7-push/bin
+CMD ["catalina.sh", "run”]
 
 
-#ENV CATALINA_HOME /usr/local/tomcat
-#ENV PATH $CATALINA_HOME/bin:$PATH
-#RUN mkdir -p "$CATALINA_HOME"
-#WORKDIR $CATALINA_HOME
