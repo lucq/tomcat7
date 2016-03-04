@@ -1,4 +1,4 @@
-FROM centos6.6
+FROM centos
 #FROM ubuntu
 #安装wget
 RUN rpm -vhi wget-1.12-1.8.el6.x86_64.rpm
