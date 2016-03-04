@@ -8,7 +8,7 @@ RUN cd /opt
 RUN wget ftp://220.194.48.110:21/pub/jdk1.7.0_71.tar.gz
 RUN tar -zxvf jdk1.7.0_71.tar.gz
 RUN cd /opt
-RUN wget  ftp://220.194.48.110:21/tomcat7-push.tar.gz
+RUN wget  ftp://220.194.48.110/pub/tomcat7-push.tar.gz
 RUN tar -zxvf tomcat7-push.tar.gz
 
 #设置tomcat端口
